@@ -1,0 +1,190 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+:root{
+    --font : 'Noto Serif JP', serif;
+}
+
+nav{
+    height:50px;
+    width: 100vw;
+    background-color: #F0DE36;
+    display: flex;
+    font-family: var(--font);
+}
+
+nav h1{
+    margin-left: 20px;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#listContainer{
+    width: 800px;
+    height: 500px;
+    /* background-color: blue; */
+    margin-top: 50px;
+}
+
+#formContainer{
+    height: 21%;
+    width: 100%;
+    /* border: 2px solid red; */
+    display: flex;
+}
+
+#formContainer:nth-child(n){
+    margin-bottom: 5px;
+}
+
+#formContainer form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#inputNameContainer{
+    width: 99.6%;
+    height: 50%;
+    font-family: cursive;
+}
+
+#restContainer{
+    display: flex;
+    width: 100%;
+    height: 30%;
+}
+
+#inputName{
+    width: 100%;
+    height: 100%;
+    font-family: var(--font);
+    /* border-radius: 10px; */
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+#btnContainer{
+    display: flex;
+    height: 20%;
+    width: 100%;
+    margin-top: 10px;
+    
+}
+
+#btnContainer button{
+    width: 50%;
+    height: 50px;
+    font-family: var(--font);
+    word-spacing: 5px;
+    letter-spacing: 3px;
+    background-color: #3F2E3E;
+    color: white;
+    border: none;
+}
+
+#btnContainer a{
+    /* background-color: red; */
+    width: 50%;
+    height: 50px;
+    font-family: var(--font);   
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+#btnContainer a #button{
+    width: 100%;
+    height: 78%;
+    position: relative;
+    /* bottom: 3px; */
+    background-color: red;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding-top: 11px;
+}
+
+
+
+.input{
+    width: 50%;
+    /* border-radius: 5px; */
+    margin-top: 10px;
+    height: 27px;
+    border: none;
+    border-bottom: 1px solid black;
+    margin-right: 2px;
+}
+
+#taskContainer{
+    height: 80%;
+    width: 100%;
+    /* background-color: blue; */
+    margin-top: 50px;
+}
+
+.tasks{
+    width: 100%;
+    height: 70px;
+    margin-top: 20px;
+    background-color: #F0DE36;
+    border-radius: 10px;
+    position: relative;
+     
+}
+
+.fa-check-to-slot{
+    font-size: 30px;
+    color: white;
+    position: relative;
+    /* top: 19px; */
+    margin-left: 10px;
+}
+
+.task_name_text{
+    font-size: 40px;
+    font-family: var(--font);
+    font-weight: bolder;
+    margin-left: 10px;
+    letter-spacing: 4px;
+}
+
+.tag{
+    font-size: 20px;
+    font-family: var(--font);
+}
+
+#tag{
+    font-size: 20px;
+    font-family: var(--font);
+    width: 50%;
+    border: none;
+    border-bottom: 1px solid black;
+    position: relative;
+    top: 6px;
+}
+
+.date{
+    font-size: 30px;
+    font-family: var(--font);
+    position: relative;
+    left: 346px;
+}
+
+.delete-single{
+    font-size: 30px;
+    color: white;
+    position: absolute;
+    right: -40px;
+    top: 18px;
+    color: red;
+}

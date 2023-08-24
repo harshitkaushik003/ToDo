@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+    <!-- styles and google fonts  -->
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <h1>TO DO LIST</h1>
+    </nav>
+    <!-- main code  -->
+    <main>
+        <!-- list container where the content will be placed (form + list) -->
+        <div id="listContainer">
+            <!-- the form  -->
+            <div id="formContainer">
+                <form action="/create-task" method="POST">
+                    <div id="inputNameContainer">
+                        <input type="text" name="name" id="inputName" placeholder="Enter Task Name">
+                    </div>
+                    <div id="restContainer">
+                        <input type="date" name="dueDate" placeholder="Due Date" class="input">
+                        <select name="tag" id="tag">
+                            <option value="" selected disabled>Select a Tag</option>
+                            <option value="Work">Work</option>
+                            <option value="study">Study</option>
+                            <option value="break">Break</option>
+                            <option value="sports">Sports</option>
+                            <option value="Personal">Personal</option>
+                            <option value="Home">Home</option>
+                        </select>
+                    </div>
+                    <!-- for the buttons  -->
+                    <div id="btnContainer">
+                        <button type="submit">ADD TASK</button>
+                        <a href="/delete-all-tasks">
+                            <div id="button">DELETE TASKS</div>
+                        </a>
+                    </div>
+                </form>
+            </div>
+            <!-- the container for placing all the tasks  -->
+            <div id="taskContainer">
+                <%for (i of taskList) {%>
+                    <!-- here the background color will be #8BE8E5 if the task is marked as done  -->
+                    <div class="tasks" <% if (i.done){%> style="background-color: #8BE8E5" <%}%>>
+                        <!-- toggle task, it will also contain a query  -->
+                        <a href="/toggle-task/?id=<%=i.id%>"><i class="fa-solid fa-check-to-slot"></i></a>
+                        <span class="task_name_text"><%= i.name %></span>
+                        <span class="tag"><%= i.tag %></span>
+                        <span class="date"><%= i.dueDate %></span>
+                        <!-- the delete contains a query that will give the id  -->
+                        <a href="/delete-single-task/?id=<%=i.id%>"><span class="delete-single"><i class="fa-solid fa-trash"></i></span></a>
+                    </div>
+                <%}%>
+                
+            </div>
+        </div>
+    </main>
+    <!-- font awesome  -->
+    <script src="https://kit.fontawesome.com/03f8fd8052.js" crossorigin="anonymous"></script>
+</body>
+</html>
